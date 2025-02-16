@@ -6,8 +6,8 @@ export default function About(){
     
     const [user, setUser] = useState<User> ({username:"Kalle", age: 25})
     
-    function changeUser(){
-        setUser({username: "Olle", age:30})
+    function updateUser(name: string, age: number) {
+        setUser({ username: name, age: age });
     }
     
     return (
@@ -17,8 +17,8 @@ export default function About(){
             <p>Ålder: {user.age}</p>
 
              <div>
-                <p>Byt namn och ålder på användaren!</p>
-                <button onClick={changeUser}>Byt namn och ålder</button>
+                <button onClick={() => updateUser("Lisa", 28)}>Byt till Lisa</button>
+                <button onClick={() => updateUser("Erik", 35)}>Byt till Erik</button>
              </div>
 
         </>
