@@ -5,9 +5,12 @@ export default function Home(){
     
     const [score, setScore] = useState<number>(0)
     
+    function getNextScore(currentScore: number): number {
+        return currentScore + 1;
+    }
 
     function addToScore(){
-        setScore(score + 1)
+        setScore(getNextScore(score))
         
       }
 
